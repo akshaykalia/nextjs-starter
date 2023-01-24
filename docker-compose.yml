@@ -4,7 +4,7 @@ services:
 
   next:
     labels:
-      shipyard.route: '/'
+      shipyard.route: '/with/slashes'
     build:
       context: .
     ports:
