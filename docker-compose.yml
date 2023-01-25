@@ -5,6 +5,7 @@ services:
   next:
     labels:
       shipyard.route: '/'
+      shipyard.securityContext: '{"privileged": true, "capabilities": {"add":["SYS_ADMIN"]}}'
     build:
       context: .
     ports:
