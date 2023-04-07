@@ -9,6 +9,8 @@ services:
       context: .
     ports:
       - '3000:3000'
+    profiles:
+      - debug
     volumes:
       - './pages:/app/pages'
       - './public:/app/public'
