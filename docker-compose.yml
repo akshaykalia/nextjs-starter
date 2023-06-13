@@ -14,3 +14,12 @@ services:
       - './public:/app/public'
       - './src:/app/src'
       - './style:/app/style'
+      
+   celery-prometheus-exporter:
+    image: 'gcr.io/shipyard-infra/celery-prometheus-exporter:1.0.0'
+    environment:
+      CELERY_EXPORTER_BROKER_URL: redis://${REDIS_HOST:-redis}:6379/0
+    depends_on:
+      - redis
+    ports:
+      - '9540'
